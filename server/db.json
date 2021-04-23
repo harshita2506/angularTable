@@ -1,0 +1,46 @@
+{
+  "inventory": [
+    {
+      "name": "FC Barcelona",
+      "description": "The best football team in the world!",
+      "price": "20032",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "FC Barcelona",
+      "description": "The best football team in the world!",
+      "price": 200
+    },
+    {
+      "name": "FC Barcelona",
+      "description": "The best football team in the world",
+      "price": "200111",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "name": "FC Barcelona",
+      "description": "The best football team in the world!",
+      "price": 200
+    },
+    {
+      "name": "hgfjhh",
+      "description": "hvjhg",
+      "price": "78",
+      "id": 7
+    },
+    {
+      "name": "gjhg",
+      "description": "hkjh",
+      "price": 809,
+      "id": 8
+    },
+    {
+      "name": "fjhg",
+      "description": "gkjhkjh",
+      "price": 90,
+      "id": 9
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<div class="example-header" fxLayout="row">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+  </mat-form-field>
+  <button matTooltip="Add product" (click)="addNew()" class="floating-btn" mat-fab>
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div class="example-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="name"> {{row.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="description"> {{row.description}} </mat-cell>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="price"> {{row.price}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-icon matTooltip="Edit Item" color="primary" style="cursor: pointer;" (click)="getRowData(element)">
+          edit
+        </mat-icon>
+
+        <mat-icon class="mr-2" matTooltip="Delete Item" style="cursor: pointer;" color="accent"
+          (click)="DeleteRowData(element)">
+          delete_forever
+        </mat-icon>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
